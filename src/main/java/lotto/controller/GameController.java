@@ -19,8 +19,7 @@ public class GameController {
     }
 
     public void start() {
-        outputView.printInputPriceMsg();
-        int inputPrice = inputView.readInputPrice(); //TODO 1000원 단위 아니면 예외처리
+        int inputPrice = inputPrice();
         int lottoCount = lottoService.lottoPriceToCount(inputPrice);
         List<Lotto> lottoLists = lottoService.createLottoLists(lottoCount);
         outputView.printInputPriceToCount(lottoCount, lottoLists);
@@ -34,5 +33,15 @@ public class GameController {
         outputView.printRateOfReturn(lottoService, inputPrice, winningStatisticsList, lottoLists, inputLottoNums, inputBonusNumber);
 
 
+    }
+
+    private int inputPrice() {
+        try {
+            outputView.printInputPriceMsg();
+            return inputView.readInputPrice(); //TODO 1000원 단위 아니면 예외처리
+        } catch (IllegalArgumentException e) {
+            System.out.println(e.getMessage());
+            return 0;
+        }
     }
 }
