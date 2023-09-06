@@ -21,11 +21,12 @@ public class InputView {
     }
 
     public List<Integer> readInputLottoNumbers() {
-         return Arrays
+        List<Integer> inputLottoList = Arrays
                 .stream(Console.readLine()
                         .split(","))
-                 .map(Integer::parseInt)
+                .map(Integer::parseInt)
                 .collect(Collectors.toList());
+        return inputLottoList;
     }
 
     public int readInputBonusNumbers() {
