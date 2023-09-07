@@ -38,12 +38,12 @@ public class GameController {
     }
 
     public float getRateOfReturn(int inputPrice, List<Integer> countList) {
-        long sum = countList.get(0) * 5000L
-                + countList.get(1) * 50000L
-                + countList.get(2) * 1500000L
+        int sum = countList.get(0) * 5000
+                + countList.get(1) * 50000
+                + countList.get(2) * 1500000
                 + countList.get(3) * 30000000
-                + countList.get(4) * 2000000000L;
-        return (float)sum / inputPrice * 100 ;
+                + countList.get(4) * 2000000000;
+        return (float) sum / inputPrice * 100 ;
     }
 
     private List<Integer> getCounts(List<Lotto> lottoLists, Lotto inputLottoNums, int inputBonusNumber) {
