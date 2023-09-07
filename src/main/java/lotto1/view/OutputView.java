@@ -1,11 +1,10 @@
-package lotto.view;
+package lotto1.view;
 
-import lotto.model.Lotto;
-import lotto.service.LottoService;
+import lotto1.model.Lotto;
 
 import java.util.List;
 
-import static lotto.util.MessageConst.*;
+import static lotto1.util.MessageConst.*;
 
 public class OutputView {
     public void printInputPriceMsg() {

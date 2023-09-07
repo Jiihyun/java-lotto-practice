@@ -1,4 +1,4 @@
-package lotto.util;
+package lotto1.util;
 
 public class NumberConst {
     public static final int INCLUSIVE_NUM = 1;

@@ -1,15 +1,13 @@
-package lotto.controller;
+package lotto1.controller;
 
-import lotto.model.Lotto;
-import lotto.service.LottoService;
-import lotto.util.NumberConst;
-import lotto.view.InputView;
-import lotto.view.OutputView;
+import lotto1.model.Lotto;
+import lotto1.service.LottoService;
+import lotto1.util.NumberConst;
+import lotto1.view.InputView;
+import lotto1.view.OutputView;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import static lotto.util.NumberConst.*;
 
 public class GameController {
     InputView inputView;
@@ -41,11 +39,11 @@ public class GameController {
     }
 
     public float getRateOfReturn(int inputPrice, List<Integer> countList) {
-        int sum = countList.get(0) * PRICE_OF_COUNT_THREE
-                + countList.get(1) * PRICE_OF_COUNT_FOUR
-                + countList.get(2) * PRICE_OF_COUNT_FIVE
-                + countList.get(3) * PRICE_OF_COUNT_FIVE_WITH_BONUS
-                + countList.get(4) * PRICE_OF_COUNT_SIX;
+        int sum = countList.get(0) * NumberConst.PRICE_OF_COUNT_THREE
+                + countList.get(1) * NumberConst.PRICE_OF_COUNT_FOUR
+                + countList.get(2) * NumberConst.PRICE_OF_COUNT_FIVE
+                + countList.get(3) * NumberConst.PRICE_OF_COUNT_FIVE_WITH_BONUS
+                + countList.get(4) * NumberConst.PRICE_OF_COUNT_SIX;
         return (float) sum / inputPrice * 100 ;
     }
 

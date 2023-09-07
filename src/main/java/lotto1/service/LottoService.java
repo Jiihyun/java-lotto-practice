@@ -1,12 +1,12 @@
-package lotto.service;
+package lotto1.service;
 
-import lotto.model.Lotto;
-import lotto.util.RandomNumberGenerator;
+import lotto1.model.Lotto;
+import lotto1.util.RandomNumberGenerator;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import static lotto.util.NumberConst.*;
+import static lotto1.util.NumberConst.*;
 
 public class LottoService {
     RandomNumberGenerator randomNumberGenerator;

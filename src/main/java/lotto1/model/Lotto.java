@@ -1,13 +1,10 @@
-package lotto.model;
+package lotto1.model;
 
-import lotto.util.NumberConst;
+import lotto1.util.NumberConst;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
-
-import static lotto.util.NumberConst.*;
 
 public class Lotto {
     private final List<Integer> numbers;
@@ -20,10 +17,10 @@ public class Lotto {
     }
 
     private void validate(List<Integer> numbers) {
-        if (numbers.size() != LOTTO_NUMBERS_SIZE) {
+        if (numbers.size() != NumberConst.LOTTO_NUMBERS_SIZE) {
             throw new IllegalArgumentException();
         }
-        if (numbers.stream().distinct().count() != LOTTO_NUMBERS_SIZE) {
+        if (numbers.stream().distinct().count() != NumberConst.LOTTO_NUMBERS_SIZE) {
             throw new IllegalArgumentException();
         }
     }

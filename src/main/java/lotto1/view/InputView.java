@@ -1,14 +1,13 @@
-package lotto.view;
+package lotto1.view;
 
 import camp.nextstep.edu.missionutils.Console;
-import lotto.util.MessageConst;
-import lotto.util.NumberConst;
+import lotto1.util.NumberConst;
 
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import static lotto.util.MessageConst.*;
+import static lotto1.util.MessageConst.*;
 
 public class InputView {
     public int readInputPrice() {

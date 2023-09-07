@@ -1,4 +1,4 @@
-package lotto.util;
+package lotto1.util;
 
 public class MessageConst {
     public static final String INPUT_PRICE_MSG = "구입금액을 입력해 주세요.";

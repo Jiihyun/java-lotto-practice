@@ -1,10 +1,10 @@
-package lotto;
+package lotto1;
 
-import lotto.controller.GameController;
-import lotto.service.LottoService;
-import lotto.util.RandomNumberGenerator;
-import lotto.view.InputView;
-import lotto.view.OutputView;
+import lotto1.controller.GameController;
+import lotto1.service.LottoService;
+import lotto1.util.RandomNumberGenerator;
+import lotto1.view.InputView;
+import lotto1.view.OutputView;
 
 public class Application {
     public static void main(String[] args) {

@@ -1,13 +1,11 @@
-package lotto.util;
+package lotto1.util;
 
 import camp.nextstep.edu.missionutils.Randoms;
 
 import java.util.List;
 
-import static lotto.util.NumberConst.*;
-
 public class RandomNumberGenerator {
     public List<Integer> generateLottoNumberInAscending() {
-        return Randoms.pickUniqueNumbersInRange(INCLUSIVE_NUM, EXCLUSIVE_NUM, LOTTO_NUMBERS_SIZE);
+        return Randoms.pickUniqueNumbersInRange(NumberConst.INCLUSIVE_NUM, NumberConst.EXCLUSIVE_NUM, NumberConst.LOTTO_NUMBERS_SIZE);
     }
 }
