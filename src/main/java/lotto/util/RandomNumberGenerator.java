@@ -8,6 +8,6 @@ import static lotto.util.NumberConst.*;
 
 public class RandomNumberGenerator {
     public List<Integer> generateLottoNumberInAscending() {
-        return Randoms.pickUniqueNumbersInRange(INCLUSIVE_NUM, EXCLUSIVE_NUM, 6);
+        return Randoms.pickUniqueNumbersInRange(INCLUSIVE_NUM, EXCLUSIVE_NUM, LOTTO_NUMBERS_SIZE);
     }
 }

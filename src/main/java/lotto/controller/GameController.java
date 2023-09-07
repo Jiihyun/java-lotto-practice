@@ -2,11 +2,14 @@ package lotto.controller;
 
 import lotto.model.Lotto;
 import lotto.service.LottoService;
+import lotto.util.NumberConst;
 import lotto.view.InputView;
 import lotto.view.OutputView;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import static lotto.util.NumberConst.*;
 
 public class GameController {
     InputView inputView;
@@ -38,11 +41,11 @@ public class GameController {
     }
 
     public float getRateOfReturn(int inputPrice, List<Integer> countList) {
-        int sum = countList.get(0) * 5000
-                + countList.get(1) * 50000
-                + countList.get(2) * 1500000
-                + countList.get(3) * 30000000
-                + countList.get(4) * 2000000000;
+        int sum = countList.get(0) * PRICE_OF_COUNT_THREE
+                + countList.get(1) * PRICE_OF_COUNT_FOUR
+                + countList.get(2) * PRICE_OF_COUNT_FIVE
+                + countList.get(3) * PRICE_OF_COUNT_FIVE_WITH_BONUS
+                + countList.get(4) * PRICE_OF_COUNT_SIX;
         return (float) sum / inputPrice * 100 ;
     }
 

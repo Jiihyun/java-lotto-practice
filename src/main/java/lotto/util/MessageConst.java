@@ -12,5 +12,6 @@ public class MessageConst {
     public static final String SAME_CONUT_OF_FIVE_AND_BONUN_NUM = "5개 일치, 보너스 볼 일치 (30,000,000원) - ";
     public static final String SAME_CONUT_OF_SIX = "6개 일치 (2,000,000,000원) - ";
     public static final String UNIT_OF_NUM = "개";
+    public static final String PRICE_EXCEPTION = "[ERROR]: 가격 입력 오류";
 
 }
