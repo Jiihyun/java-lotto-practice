@@ -30,7 +30,7 @@ public class LottoService {
         return lottos;
     }
 
-    public Lotto inputLottoNumber(List<Integer> lottoNumbers) {
+    public Lotto toLotto(List<Integer> lottoNumbers) {
         return new Lotto(lottoNumbers);
     }
 
@@ -45,8 +45,8 @@ public class LottoService {
         return winningStatisticsList;
     }
 
-    public long getCountOfFiveWithBonus(List<Lotto> lottoList, Lotto inputNum, int inputBonusNumber) {
-        long countOfFive = 0;
+    public int getCountOfFiveWithBonus(List<Lotto> lottoList, Lotto inputNum, int inputBonusNumber) {
+        int countOfFive = 0;
         for (Lotto lotto : lottoList) {
             int sameNumberCount = lotto.compareNumber(inputNum);
             boolean isIncludeBonusNum = lotto.compareBonusNum(inputBonusNumber);
@@ -100,13 +100,4 @@ public class LottoService {
         return count;
     }
 
-    //TODO: 수익률 계산
-    public float getRateOfReturn(int inputPrice, List<Integer> winningStatisticsList, List<Lotto> lottoLists, Lotto inputLottoNums, int inputBonusNumber) {
-        long sum = getCountOfThree(winningStatisticsList) * 5000L
-                + getCountOfFour(winningStatisticsList) * 50000L
-                + getCountOfFive(lottoLists, inputLottoNums, inputBonusNumber) * 1500000L
-                + getCountOfFiveWithBonus(lottoLists, inputLottoNums, inputBonusNumber) * 30000000
-                + getCountOfSix(winningStatisticsList) * 2000000000L;
-        return  (float )sum / inputPrice * 100 ;
-    }
 }

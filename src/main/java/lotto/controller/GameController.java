@@ -20,26 +20,59 @@ public class GameController {
     }
 
     public void start() {
-        int inputPrice = inputPrice();
+        int inputPrice = getInputPrice();
         int lottoCount = lottoService.lottoPriceToCount(inputPrice);
         List<Lotto> lottoLists = lottoService.createLottoLists(lottoCount);
         outputView.printInputPriceToCount(lottoCount, lottoLists);
-        outputView.printInputLottoNumberMsg();
-        List<Integer> lottoNumbers = inputView.readInputLottoNumbers();
-        outputView.printInputBonusNumberMsg();
-        Lotto inputLottoNums = lottoService.inputLottoNumber(lottoNumbers);
-        int inputBonusNumber = inputView.readInputBonusNumbers();
-        List<Integer> winningStatisticsList = lottoService.compareList(lottoLists, inputLottoNums);
-        outputView.printWinningStatisticsMsg(lottoService, winningStatisticsList, lottoLists, inputLottoNums, inputBonusNumber);
-        outputView.printRateOfReturn(lottoService, inputPrice, winningStatisticsList, lottoLists, inputLottoNums, inputBonusNumber);
-
-
+        Lotto inputLottoNums = getInputLottoNums();
+        int inputBonusNumber = getInputBonusNumber();
+        List<Integer> countList = getWinningStatistics(lottoLists, inputLottoNums, inputBonusNumber);
+        outputView.printWinningStatisticsMsg(countList);
+        float rateOfReturn = getRateOfReturn(inputPrice, countList);
+        outputView.printRateOfReturn(rateOfReturn);
     }
 
-    private int inputPrice() {
+    private List<Integer> getWinningStatistics( List<Lotto> lottoLists, Lotto inputLottoNums, int inputBonusNumber) {
+        List<Integer> countList = getCounts(lottoLists, inputLottoNums, inputBonusNumber);
+        return countList;
+    }
+
+    public float getRateOfReturn(int inputPrice, List<Integer> countList) {
+        long sum = countList.get(0) * 5000L
+                + countList.get(1) * 50000L
+                + countList.get(2) * 1500000L
+                + countList.get(3) * 30000000
+                + countList.get(4) * 2000000000L;
+        return (float)sum / inputPrice * 100 ;
+    }
+
+    private List<Integer> getCounts(List<Lotto> lottoLists, Lotto inputLottoNums, int inputBonusNumber) {
+        ArrayList<Integer> countList = new ArrayList<>();
+        List<Integer> winningStatisticsList = lottoService.compareList(lottoLists, inputLottoNums);
+        countList.add(lottoService.getCountOfThree(winningStatisticsList));
+        countList.add(lottoService.getCountOfFour(winningStatisticsList));
+        countList.add(lottoService.getCountOfFive(lottoLists, inputLottoNums, inputBonusNumber));
+        countList.add(lottoService.getCountOfFiveWithBonus(lottoLists, inputLottoNums, inputBonusNumber));
+        countList.add(lottoService.getCountOfSix(winningStatisticsList));
+
+        return countList;
+    }
+
+    private int getInputBonusNumber() {
+        outputView.printInputBonusNumberMsg();
+        return inputView.readInputBonusNumbers();
+    }
+
+    private Lotto getInputLottoNums() {
+        outputView.printInputLottoNumberMsg();
+        List<Integer> lottoNumbers = inputView.readInputLottoNumbers();
+        return lottoService.toLotto(lottoNumbers);
+    }
+
+    private int getInputPrice() {
         try {
             outputView.printInputPriceMsg();
-            return inputView.readInputPrice(); //TODO 1000원 단위 아니면 예외처리
+            return inputView.readInputPrice();
         } catch (IllegalArgumentException e) {
             System.out.println(e.getMessage());
             return 0;

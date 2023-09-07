@@ -31,18 +31,18 @@ public class OutputView {
         System.out.println(INPUT_BONUS_NUMBER_MSG);
     }
 
-    public void printWinningStatisticsMsg(LottoService lottoService, List<Integer> winningStatisticsList, List<Lotto> lottoLists, Lotto inputNum, int inputBonusNumber) {
+    public void printWinningStatisticsMsg(List<Integer> countList) {
         System.out.println();
         System.out.println(WINNING_STATISTICS_MSG);
-        //TODO: 당첨자 통계
-        System.out.println(SAME_CONUT_OF_THREE + lottoService.getCountOfThree(winningStatisticsList) + UNIT_OF_NUM);
-        System.out.println(SAME_CONUT_OF_FOUR + lottoService.getCountOfFour(winningStatisticsList) + UNIT_OF_NUM);
-        System.out.println(SAME_CONUT_OF_FIVE + lottoService.getCountOfFive(lottoLists, inputNum, inputBonusNumber) + UNIT_OF_NUM);
-        System.out.println(SAME_CONUT_OF_FIVE_AND_BONUN_NUM + lottoService.getCountOfFiveWithBonus(lottoLists, inputNum, inputBonusNumber) + UNIT_OF_NUM);
-        System.out.println(SAME_CONUT_OF_SIX + lottoService.getCountOfSix(winningStatisticsList) + UNIT_OF_NUM);
+
+        System.out.println(SAME_CONUT_OF_THREE + countList.get(0) + UNIT_OF_NUM);
+        System.out.println(SAME_CONUT_OF_FOUR + countList.get(1) + UNIT_OF_NUM);
+        System.out.println(SAME_CONUT_OF_FIVE + countList.get(2) + UNIT_OF_NUM);
+        System.out.println(SAME_CONUT_OF_FIVE_AND_BONUN_NUM + countList.get(3) + UNIT_OF_NUM);
+        System.out.println(SAME_CONUT_OF_SIX + countList.get(4) + UNIT_OF_NUM);
     }
 
-    public void printRateOfReturn(LottoService lottoService, int inputPrice, List<Integer> winningStatisticsList, List<Lotto> lottoLists, Lotto inputLottoNums, int inputBonusNumber) {
-        System.out.printf("총 수익률은 %s%%입니다.%n", String.format("%.1f", lottoService.getRateOfReturn(inputPrice, winningStatisticsList, lottoLists, inputLottoNums, inputBonusNumber)));
+    public void printRateOfReturn(float rateOfReturn) {
+        System.out.printf("총 수익률은 %.1f%%입니다.%n", rateOfReturn);
     }
 }
