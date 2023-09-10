@@ -3,7 +3,7 @@ package lotto3.domain;
 public class Money {
     private int amount;
 
-    public Money(final int amount) {
+    private Money(final int amount) {
         this.amount = amount;
     }
 
@@ -24,9 +24,13 @@ public class Money {
     //imp - 금액을 직접 변경하는 것이 아닌, Money 클래스에 돈을 증감시키는 메소드를 만들어서 간접적으로 변경하도록 할 것
     // -> 한 번더 추상화 시키기
     // buy 할 때 마다 매번 검증하는 로직을 작성하지 않아도
-    public void validateAmount(final int amount) {
+    private void validateAmount(final int amount) {
         if (amount < 0) {
             throw new IllegalArgumentException("[ERROR] - 잔고가 부족합니다.");
         }
+    }
+
+    public static Money of(final int amount) {
+        return new Money(amount);
     }
 }
