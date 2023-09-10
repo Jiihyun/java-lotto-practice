@@ -7,12 +7,16 @@ public class Money {
         this.amount = amount;
     }
 
-    public void increase(final int amount) {
-        this.amount += amount;
+    public void increase(final Money customerMoney) {
+        int nextAmount = this.amount + customerMoney.amount;
+        validateAmount(nextAmount);
+        this.amount = nextAmount;
     }
 
-    public void decrease(final int amount) {
-        this.amount -= amount;
+    public void decrease(final Money customerMoney ) {
+        int nextAmount = this.amount - customerMoney.amount;
+        validateAmount(nextAmount);
+        this.amount = nextAmount;
     }
 
     //imp - 금액을 직접 변경하는 것이 아닌, Money 클래스에 돈을 증감시키는 메소드를 만들어서 간접적으로 변경하도록 할 것
