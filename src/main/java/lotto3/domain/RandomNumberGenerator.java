@@ -5,8 +5,15 @@ import camp.nextstep.edu.missionutils.Randoms;
 import java.util.List;
 
 public class RandomNumberGenerator {
-    public LottoTicket generate() {
-    final List<Integer> numbers = Randoms.pickUniqueNumbersInRange(1, 45, 6);
-    return new LottoTicket(numbers);
+    private final int startInclusive;
+    private final int endInclusive;
+
+    public RandomNumberGenerator(final int startInclusive, final int endInclusive) {
+        this.startInclusive = startInclusive;
+        this.endInclusive = endInclusive;
+    }
+
+    public List<Integer> generate(final int count) {
+    return Randoms.pickUniqueNumbersInRange(startInclusive, endInclusive, count);
   }
 }
