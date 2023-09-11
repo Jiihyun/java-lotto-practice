@@ -30,6 +30,7 @@ public class Money {
         }
     }
 
+    //객체 생성의 역할을 하는 클래스 메서드  - Static Factory Method
     public static Money of(final int amount) {
         return new Money(amount);
     }
