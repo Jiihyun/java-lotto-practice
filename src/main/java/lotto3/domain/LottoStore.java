@@ -10,6 +10,6 @@ public class LottoStore {
 
     public LottoTicket buy(final Money wallet) {
          wallet.decrease(TICKET_PRICE);
-        return randomNumberGenerator.generate();
+        return new LottoTicket(randomNumberGenerator.generate(6));
     }
 }
