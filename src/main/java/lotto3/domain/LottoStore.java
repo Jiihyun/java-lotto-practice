@@ -1,17 +1,15 @@
 package lotto3.domain;
 
-import lotto2.domain.RandomNumbersGenerator;
-
 public class LottoStore {
     public static final Money TICKET_PRICE = Money.of(1_000);
-    private final RandomLottoTicketGenerator randomLottoTicketGenerator;
+    private final RandomNumberGenerator randomNumberGenerator;
 
-    public LottoStore(RandomLottoTicketGenerator randomLottoTicketGenerator) {
-        this.randomLottoTicketGenerator = randomLottoTicketGenerator;
+    public LottoStore(RandomNumberGenerator randomNumberGenerator) {
+        this.randomNumberGenerator = randomNumberGenerator;
     }
 
     public LottoTicket buy(final Money wallet) {
          wallet.decrease(TICKET_PRICE);
-        return randomLottoTicketGenerator.generate();
+        return randomNumberGenerator.generate();
     }
 }
