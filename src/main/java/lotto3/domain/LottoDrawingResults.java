@@ -5,7 +5,11 @@ import java.util.List;
 public class LottoDrawingResults {
     private final List<LottoDrawingResult> results;
 
-    public LottoDrawingResults(List<LottoDrawingResult> results) {
+    private LottoDrawingResults(List<LottoDrawingResult> results) {
         this.results = results;
+    }
+
+    public static LottoDrawingResults of(List<LottoDrawingResult> lottoDrawingResults) {
+        return new LottoDrawingResults(lottoDrawingResults);
     }
 }
