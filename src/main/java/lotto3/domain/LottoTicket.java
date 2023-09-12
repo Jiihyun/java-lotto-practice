@@ -1,6 +1,7 @@
 package lotto3.domain;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class LottoTicket {
     private final List<Integer> numbers;
@@ -43,4 +44,9 @@ public class LottoTicket {
         return numbers.contains(bonusNumber);
     }
 
+    //imp - List는 toString 을 호출하기만 해도 [elem1, elem2, ...] 형태의 문자열로 변환됨
+    @Override
+    public String toString() {
+        return numbers.stream().sorted().collect(Collectors.toList()).toString();
+    }
 }

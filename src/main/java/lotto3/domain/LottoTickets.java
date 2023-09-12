@@ -25,4 +25,15 @@ public class LottoTickets {
         }
         return LottoDrawingResults.of(lottoDrawingResults);
     }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append(String.format("\n%d개를 구매했습니다.\n", lottoTickets.size()));
+        for (LottoTicket lottoTicket : lottoTickets) {
+            sb.append(lottoTicket.toString());
+            sb.append("\n");
+        }
+        return sb.toString();
+    }
 }

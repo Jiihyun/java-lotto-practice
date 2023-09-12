@@ -1,12 +1,15 @@
 package lotto3.view;
 
+import lotto3.domain.LottoDrawingResults;
+import lotto3.domain.LottoTickets;
+
 public final class OutputView {
     public void printInputMoneyMessage() {
         System.out.println("구입금액을 입력해 주세요.");
     }
 
     public void printPurchaseCompletionMessage(final LottoTickets lottoTickets) {
-        // TODO:
+        System.out.println(lottoTickets);
     }
 
     public void printInputWinningNumbersMessage() {
@@ -18,6 +21,6 @@ public final class OutputView {
     }
 
     public void printLottoDrawingResults(final LottoDrawingResults lottoDrawingResults) {
-        // TODO:
+        System.out.println(lottoDrawingResults);
     }
 }

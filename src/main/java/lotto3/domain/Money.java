@@ -15,7 +15,7 @@ public class Money {
         //this.amount += customerMoney.amount;
     }
 
-    public void decrease(final Money customerMoney ) {
+    public void decrease(final Money customerMoney) {
         int nextAmount = this.amount - customerMoney.amount;
         validateAmount(nextAmount);
         this.amount = nextAmount;
@@ -37,5 +37,16 @@ public class Money {
     //객체 생성의 역할을 하는 클래스 메서드  - Static Factory Method
     public static Money of(final int amount) {
         return new Money(amount);
+    }
+
+    public Money multiplied(final int times) {
+        final int nextAmount = amount * times;
+        validateAmount(nextAmount);
+        return Money.of(nextAmount);
+    }
+
+    //imp- getAmount를 꺼내와서 사용해도 int 타입이므로 값이 복사되어 변경이 일어나도 원본에 영향을 미치지 않을 것이므로 안전
+    public int getAmount() {
+        return amount;
     }
 }
