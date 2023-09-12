@@ -41,4 +41,14 @@ public class LottoDrawingMachine {
             throw new IllegalArgumentException("[ERROR] - 중복된 로또 번호가 존재합니다.");
         }
     }
+
+    public LottoDrawingResults getResults(final LottoTickets lottoTickets) {
+        // 당첨 번호를 아직 뽑지 않은 경우
+        if (winningNumbers == null) {
+            throw new IllegalStateException("[ERROR] 당첨 결과 비교를 위해 먼저 추첨을 진행해주세요.");
+        }
+
+        // 당첨 번호와 비교 후 결과 반환
+        return lottoTickets.drawResults(winningNumbers, bonusNumber);
+    }
 }
