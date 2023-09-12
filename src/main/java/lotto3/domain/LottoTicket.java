@@ -28,4 +28,19 @@ public class LottoTicket {
             }
         }
     }
+
+    public LottoDrawingResult drawResult(final List<Integer> winningNumbers, final int bonusNumber) {
+        final int matchingNumbersCount = getWinningNumbersCount(winningNumbers);
+        final boolean hasBonusNumber = hasBonusNumber(bonusNumber);
+        return LottoDrawingResult.of(matchingNumbersCount, hasBonusNumber);
+    }
+
+    public int getWinningNumbersCount(final List<Integer> winningNumbers) {
+        return (int)winningNumbers.stream().filter(numbers::contains).count();
+    }
+
+    public boolean hasBonusNumber(final int bonusNumber) {
+        return numbers.contains(bonusNumber);
+    }
+
 }
