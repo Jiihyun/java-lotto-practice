@@ -19,6 +19,11 @@ public class Application {
         final InputView inputView = new InputView(outputView);
         final LottoController lottoController = new LottoController(inputView, outputView, lottoStore, lottoDrawingMachine);
 
-        lottoController.start();
+        //imp - test의 output이 standard output이므로 error 발생하면 standard error로 가는 걸 catch해줘서 standard output으로 넘겨줘야함
+        try {
+            lottoController.start();
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
     }
 }
