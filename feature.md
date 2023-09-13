@@ -1,28 +1,33 @@
 # 기능 목록
 
-## LottoTicket(Lotto)
-- 사용자가 입력한 로또 번호를 저장한다.
+## Lotto
+- 로또 넘버 6개 리스트 저장 []
+- 넘버 6개 맞는 지 검증 []
+- 넘버 중복 없는 지 검증 []
+
+## RandomNumberGenerator
+- 무작위로 range 1 ~45인 6개 번호 생성 (return Lotto) []
 
 ## LottoTickets
-- LottoTicket 여러 개를 들고 있는 일급 컬렉션(LottoTicket 여러 장을 구매할 것이기 때문에 필요)
-
-## RandomLottoTicketGenerator
-- 임의의 로또 번호 6자리 생성하여 LottoTicket을 만들고 반환
+- LottoTicket 여러 개를 들고 있는 일급 컬렉션(LottoTicket 여러 장을 구매할 것이기 때문에 필요) []
 
 ## Money
-- 자금 정보를 저장한다.
-- 자금 증감 연산을 지원한다
+- 자금 정보를 저장한다 []
+- 자금 증감 연산을 지원한다 []
 
 ## LottoStore
-- buy: Money를 인자로 받아서 LottoTicket을 액수에 맞게 발급하여 LottoTickets에 담아 반환
+- 로또 티켓 구매 (Money 인자, LottoTickets 리턴) []
+- 1000원으로 안 나뉠시 예외처리
 
 ## LottoDrawingMachine
-- 로또 당첨 번호 및 보너스 번호를 알고 있음 (생성 시 입력)
-- LottoTicket을 받아 당첨 번호와 대조 후 결과 LottoDrawingResult로 반 
+- inputview 받아와서 당첨 넘버 만들기 []
+- 당첨 보너스 넘버 만들기 []
+- LottoTicket을 받아 당첨 번호와 대조 후 결과 LottoDrawingResult로 반환 []
 
 ## LottoDrawingResult
-- Lotto 추첨 결과를 담고 있다.
-
+- 한 개의 Lotto 결과 반환 []
+- 
 ## LottoDrawingResults
-- 로또 추첨 결과인 LottoDrawingResult의 일급 컬렉션
-- 구매 금액, 당첨 통계, 수익률 등의 통계에 맞춰 포맷팅 하는 기능
+- Lotto 결과 모음 반환 []
+- 수익률 계산 []
+
