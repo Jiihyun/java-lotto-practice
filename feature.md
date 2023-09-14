@@ -9,15 +9,15 @@
 - 무작위로 range 1 ~45인 6개 번호 생성 (return Lotto) [o]
 
 ## LottoTickets
-- LottoTicket 여러 개를 들고 있는 일급 컬렉션(LottoTicket 여러 장을 구매할 것이기 때문에 필요) []
+- LottoTicket 여러 개를 들고 있는 일급 컬렉션(LottoTicket 여러 장을 구매할 것이기 때문에 필요) [o]
 
 ## Money
 - 자금 정보를 저장한다 [o]
 - 자금 증감 연산을 지원한다 [o]
 
 ## LottoStore
-- 로또 티켓 구매 (Money 인자, LottoTickets 리턴) []
-- 1000원으로 안 나뉠시 예외처리
+- 로또 티켓 구매 (Money 인자, LottoTickets 리턴) [o]
+- 1000원으로 안 나뉠시 예외처리 [o]
 
 ## LottoDrawingMachine
 - inputview 받아와서 당첨 넘버 만들기 []

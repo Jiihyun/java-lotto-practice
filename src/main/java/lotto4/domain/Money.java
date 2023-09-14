@@ -1,11 +1,15 @@
 package lotto4.domain;
 
 import lotto4.util.MessageConst;
+import lotto4.util.NumberConst;
+
+import static lotto4.util.NumberConst.*;
 
 public class Money {
     private int amount;
 
     private Money(final int amount) {
+        validateUnitOfPrice(amount);
         this.amount = amount;
     }
 
@@ -29,5 +33,15 @@ public class Money {
         if (amount < 0) {
             throw new IllegalArgumentException(MessageConst.MONEY_AMOUNT_EXCEPTION);
         }
+    }
+
+    private void validateUnitOfPrice(final int amount) {
+        if (amount % LOTTO_TICKET_PRICE != 0) {
+            throw new IllegalArgumentException(MessageConst.MONEY_INPUT_EXCEPTION);
+        }
+    }
+
+    public boolean isEqualOrMoreThanLottoTicketPrice() { // question - money 타입으로 받은 이유
+        return amount >= LOTTO_TICKET_PRICE;
     }
 }
