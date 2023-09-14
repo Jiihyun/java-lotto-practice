@@ -32,6 +32,7 @@ public class InputView {
     }
 
     public int inputBonusNumber() {
+        outputView.printInputBonusNumber();
         return Integer.parseInt(Console.readLine());
     }
 }
