@@ -3,6 +3,7 @@ package lotto4.domain;
 import lotto4.util.MessageConst;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Lotto {
     private final List<Integer> numbers;
@@ -10,7 +11,8 @@ public class Lotto {
     private Lotto(List<Integer> numbers) {
         validateSize(numbers);
         validateDuplication(numbers);
-        this.numbers = numbers;
+        List<Integer> sortedNumbers = numbers.stream().sorted().collect(Collectors.toList());
+        this.numbers = sortedNumbers;
     }
 
     private void validateSize(final List<Integer> numbers) {
