@@ -22,4 +22,12 @@ public class InputView {
         return Money.of(receivedMoney);
     }
 
+    public Lotto inputWinningNumbers() {
+        outputView.printInputWinningNumbers();
+        List<Integer> winningNumsList = Arrays.stream(Console.readLine()
+                .split(","))
+                .map(Integer::parseInt)
+                .collect(Collectors.toList());
+        return Lotto.of(winningNumsList);
+    }
 }
