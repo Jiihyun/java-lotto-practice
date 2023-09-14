@@ -15,5 +15,6 @@ public class MessageConst {
     public static final String NUM_DUPLICATION_EXCEPTION = "[ERROR] - 중복된 번호가 존재합니다.";
     public static final String NUM_SIZE_EXCEPTION = "[ERROR] - 로또 번호는 반드시 6개여야 합니다.";
     public static final String MONEY_INPUT_EXCEPTION = "[ERROR] - 로또 금액은 1,000원 단위만 받습니다.";
+    public static final String MONEY_AMOUNT_EXCEPTION = "[ERROR] - 금액은 마이너스가 될 수 없습니다.";
 
 }
