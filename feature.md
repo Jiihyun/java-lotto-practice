@@ -6,7 +6,7 @@
 - 넘버 중복 없는 지 검증 [o]
 
 ## RandomNumberGenerator
-- 무작위로 range 1 ~45인 6개 번호 생성 (return Lotto) []
+- 무작위로 range 1 ~45인 6개 번호 생성 (return Lotto) [o]
 
 ## LottoTickets
 - LottoTicket 여러 개를 들고 있는 일급 컬렉션(LottoTicket 여러 장을 구매할 것이기 때문에 필요) []

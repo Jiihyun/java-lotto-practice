@@ -30,4 +30,8 @@ public class InputView {
                 .collect(Collectors.toList());
         return Lotto.of(winningNumsList);
     }
+
+    public int inputBonusNumber() {
+        return Integer.parseInt(Console.readLine());
+    }
 }
