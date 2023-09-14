@@ -25,7 +25,7 @@
 - LottoTicket을 받아 당첨 번호와 대조 후 결과 LottoDrawingResult로 반환 []
 
 ## LottoDrawingResult
-- 한 개의 Lotto 결과 반환 []
+- 한 개의 Lotto 결과 반환 [o]
 - 
 ## LottoDrawingResults
 - Lotto 결과 모음 반환 []
