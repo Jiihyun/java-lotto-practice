@@ -26,6 +26,5 @@ public class LottoController {
         lottoDrawingMachine.drawNumbers(winningNumbers, bonusNumber);
         LottoDrawingResults lottoDrawingResults = lottoDrawingMachine.compareResult(lottoTickets);
         outputView.printWinningStatistics(lottoDrawingResults);
-
     }
 }

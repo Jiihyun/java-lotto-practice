@@ -4,10 +4,15 @@ import camp.nextstep.edu.missionutils.Console;
 import camp.nextstep.edu.missionutils.Randoms;
 import lotto4.domain.Lotto;
 import lotto4.domain.Money;
+import lotto4.util.MessageConst;
+import lotto4.util.NumberConst;
 
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
+
+import static lotto2.util.MessageConst.PRICE_EXCEPTION;
+import static lotto4.util.MessageConst.*;
 
 public class InputView {
     private final OutputView outputView;
@@ -18,7 +23,13 @@ public class InputView {
 
     public Money inputMoney() {
         outputView.printInputMoneyMsg();
-        int receivedMoney = Integer.parseInt(Console.readLine());
+        String price = Console.readLine();
+        for (int i = 0; i < price.length(); i++) {
+            if (!Character.isDigit(price.charAt(i))) {
+                throw new IllegalArgumentException(MONEY_INPUT_EXCEPTION);
+            }
+        }
+        int receivedMoney = Integer.parseInt(price);
         return Money.of(receivedMoney);
     }
 

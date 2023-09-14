@@ -8,6 +8,10 @@ import static lotto4.util.NumberConst.*;
 public class Money {
     private int amount;
 
+    public int getAmount() {
+        return amount;
+    }
+
     private Money(final int amount) {
         validateUnitOfPrice(amount);
         this.amount = amount;
@@ -44,4 +48,6 @@ public class Money {
     public boolean isEqualOrMoreThanLottoTicketPrice() { // question - money 타입으로 받은 이유
         return amount >= LOTTO_TICKET_PRICE;
     }
+
+
 }

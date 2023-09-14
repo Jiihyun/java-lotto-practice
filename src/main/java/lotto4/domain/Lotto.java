@@ -8,7 +8,7 @@ import java.util.stream.Collectors;
 public class Lotto {
     private final List<Integer> numbers;
 
-    private Lotto(List<Integer> numbers) {
+    public Lotto(List<Integer> numbers) {
         validateSize(numbers);
         validateDuplication(numbers);
         List<Integer> sortedNumbers = numbers.stream().sorted().collect(Collectors.toList());
