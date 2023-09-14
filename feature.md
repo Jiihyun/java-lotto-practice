@@ -20,14 +20,14 @@
 - 1000원으로 안 나뉠시 예외처리 [o]
 
 ## LottoDrawingMachine
-- inputview 받아와서 당첨 넘버 만들기 []
-- 당첨 보너스 넘버 만들기 []
-- LottoTicket을 받아 당첨 번호와 대조 후 결과 LottoDrawingResult로 반환 []
+- inputview 받아와서 당첨 넘버 만들기 [o]
+- 당첨 보너스 넘버 만들기 [o]
+- LottoTicket을 받아 당첨 번호와 대조 후 결과 LottoDrawingResult로 반환 [o]
 
 ## LottoDrawingResult
 - 한 개의 Lotto 결과 반환 [o]
 - 
 ## LottoDrawingResults
-- Lotto 결과 모음 반환 []
+- Lotto 결과 모음 반환 [o]
 - 수익률 계산 []
 

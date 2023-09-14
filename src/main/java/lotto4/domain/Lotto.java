@@ -30,4 +30,16 @@ public class Lotto {
     public static Lotto of(final List<Integer> numbers) {
         return new Lotto(numbers);
     }
+
+    public LottoDrawingResult getResult(Lotto inputWinningNums, int bonusNum) {
+        //question - numbers::contains
+        int matchingNums = (int)inputWinningNums.numbers.stream().filter(numbers::contains).count();
+        boolean hasBonusNum = numbers.stream().anyMatch(num -> num.equals(bonusNum));
+        return LottoDrawingResult.of(matchingNums, hasBonusNum);
+    }
+
+    @Override
+    public String toString() {
+        return numbers.stream().collect(Collectors.toList()).toString();
+    }
 }
