@@ -26,7 +26,7 @@ public enum LottoDrawingResult {
 
     private static final List<LottoDrawingResult> results = Arrays.stream(values()).collect(Collectors.toList());
 
-    public LottoDrawingResult of(final int matchingNums, final boolean hasBonusNum) {
+    public static LottoDrawingResult of(final int matchingNums, final boolean hasBonusNum) {
         if (matchingNums == 5 && hasBonusNum) {
             return SECOND;
         }
