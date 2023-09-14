@@ -1,5 +1,6 @@
 package lotto4.view;
 
+import lotto4.domain.LottoTickets;
 import lotto4.util.MessageConst;
 
 public class OutputView {
@@ -7,9 +8,8 @@ public class OutputView {
         System.out.println(MessageConst.INPUT_MONEY_MSG);
     }
 
-    public void printLottoTickets() {
-        //TODO : LottoTickets 받아와서 구매한 로또 넘버들 출력
-        System.out.println(+MessageConst.TICKET_AMOUNT_CONFIRM_MSG);
+    public void printLottoTickets(LottoTickets lottoTickets) {
+        System.out.println(lottoTickets);
     }
 
     public void printInputWinningNumbers() {
