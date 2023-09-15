@@ -11,7 +11,6 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import static lotto2.util.MessageConst.PRICE_EXCEPTION;
 import static lotto4.util.MessageConst.*;
 
 public class InputView {
@@ -21,6 +20,7 @@ public class InputView {
         this.outputView = outputView;
     }
 
+    //imp - 글자 검사!!
     public Money inputMoney() {
         outputView.printInputMoneyMsg();
         String price = Console.readLine();
