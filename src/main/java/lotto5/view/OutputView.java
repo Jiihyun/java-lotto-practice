@@ -1,14 +1,25 @@
 package lotto5.view;
 
-import lotto5.controller.DrawingResult;
-import lotto5.domain.Lottos;
+import lotto5.domain.DrawingResults;
+import lotto5.domain.Lotto;
+
+import java.util.List;
 
 public class OutputView {
-    public static void printLottos(Lottos lottos) {
-
+    public static void printLottos(List<Lotto> lottos) {
+        System.out.printf("%d개를 구매했습니다.\n", lottos.size());
+        for (Lotto lotto : lottos) {
+            System.out.println(lotto);
+        }
+//        StringBuilder sb = new StringBuilder();
+//        sb.append(lottos.size())
+//                .append("개를 구매했습니다.\n")
+//                .append(lottos);
+//        String string = sb.toString();
+//        System.out.println(string);
     }
 
-    public static void printDrawingResult(DrawingResult result) {
+    public static void printDrawingResult(DrawingResults result) {
 
     }
 }

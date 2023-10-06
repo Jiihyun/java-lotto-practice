@@ -8,6 +8,10 @@ public class Money {
         this.amount = amount;
     }
 
+    public static Money of(int amount) {
+        return new Money(amount);
+    }
+
     public void increase(int amount) {
         int nextAmount = this.amount + amount;
         validateAmount(nextAmount);
@@ -34,5 +38,9 @@ public class Money {
 
     public int getAmount() {
         return this.amount;
+    }
+
+    public boolean isEqualOrMoreThan(final int amount) {
+        return this.amount >= amount;
     }
 }

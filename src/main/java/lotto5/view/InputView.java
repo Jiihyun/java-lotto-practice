@@ -1,6 +1,7 @@
 package lotto5.view;
 
 import camp.nextstep.edu.missionutils.Console;
+import lotto5.domain.Money;
 
 import java.util.Arrays;
 import java.util.List;
@@ -8,11 +9,12 @@ import java.util.stream.Collectors;
 
 public class InputView {
     //question : static vs 객체 생성(DI해주ㄱ기)
-    public static int inputPurchaseAmount() {
+    public static Money inputPurchaseMoney() {
         final String input = readLine();
         InputValidator.validateMoneyInput(input);
 
-        return Integer.parseInt(input);
+        final int amount = Integer.parseInt(input);
+        return Money.of(amount);
     }
 
     public static List<Integer> inputWinningNumbers() {
