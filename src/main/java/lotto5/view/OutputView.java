@@ -7,7 +7,7 @@ import java.util.List;
 
 public class OutputView {
     public static void printLottos(List<Lotto> lottos) {
-        System.out.printf("%d개를 구매했습니다.\n", lottos.size());
+        System.out.printf("\n%d개를 구매했습니다.\n", lottos.size());
         for (Lotto lotto : lottos) {
             System.out.println(lotto);
         }
@@ -21,5 +21,9 @@ public class OutputView {
 
     public static void printDrawingResult(DrawingResults result) {
 
+    }
+
+    public static void inputMoneyMsg() {
+        System.out.println("구입금액을 입력해 주세요.");
     }
 }

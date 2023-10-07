@@ -10,6 +10,7 @@ import java.util.stream.Collectors;
 public class InputView {
     //question : static vs 객체 생성(DI해주ㄱ기)
     public static Money inputPurchaseMoney() {
+        OutputView.inputMoneyMsg();
         final String input = readLine();
         InputValidator.validateMoneyInput(input);
 

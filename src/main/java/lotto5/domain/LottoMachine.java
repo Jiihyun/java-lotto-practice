@@ -34,6 +34,9 @@ public class LottoMachine {
 
         // 5개 번호 일치 시에만 보너스 번호 일치 확인
         // DrawingResult enum (format된거) 반환 (n개 일치하는지, 당첨 금액, 보너스 boolean 여부)
+        for (Lotto lotto : lottos) {
+
+        }
         return null;
     }
 }
