@@ -16,6 +16,12 @@ public class Lotto {
         }
     }
 
+    public DrawingResult getResult(Lotto inputWinningNums, int bonusNum) {
+        int matchingNums = (int)inputWinningNums.numbers.stream().filter(numbers::contains).count();
+        boolean hasBonusNum = numbers.stream().anyMatch(num -> num.equals(bonusNum));
+        return DrawingResult.getResult(matchingNums, hasBonusNum);
+    }
+
     @Override
     public String toString() {
         return numbers.toString();

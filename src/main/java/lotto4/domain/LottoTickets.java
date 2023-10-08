@@ -19,6 +19,7 @@ public class LottoTickets {
     public LottoDrawingResults getResults(Lotto inputWinningNums, int bonusNum) {
         List<LottoDrawingResult> drawingResults = new ArrayList<>();
 
+
         for (Lotto lottoTicket : lottoTickets) {
             LottoDrawingResult drawingResult = lottoTicket.getResult(inputWinningNums, bonusNum);
             drawingResults.add(drawingResult);
