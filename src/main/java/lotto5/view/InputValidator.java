@@ -15,8 +15,11 @@ public class InputValidator {
 
     public static void validateBonusNumberInput(final String input) {
         try {
-            Integer.parseInt(input);
-        } catch (Exception e) {
+            int num = Integer.parseInt(input);
+            if (num < 1 || num > 45) {
+                throw new IllegalArgumentException("로또 번호는 1 - 45 사이여야 합니다.");
+            }
+        } catch (NumberFormatException e) {
             throw new BonusNumberInputException();
         }
     }

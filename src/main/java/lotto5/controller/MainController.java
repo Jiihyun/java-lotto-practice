@@ -24,7 +24,7 @@ public class MainController {
         //3. 구매한 로또 출력하기 ✅
         OutputView.printLottos(lottos);
         //4. 당첨 번호 입력하기 ✅
-        List<Integer> winningNumbers = InputView.inputWinningNumbers();
+        Lotto winningNumbers = InputView.inputWinningNumbers();
         //5. 보너스 번호 입력받기 ✅
         int bonusNumber = InputView.inputBonusNumber();
 

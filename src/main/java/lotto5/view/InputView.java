@@ -1,6 +1,7 @@
 package lotto5.view;
 
 import camp.nextstep.edu.missionutils.Console;
+import lotto5.domain.Lotto;
 import lotto5.domain.Money;
 
 import java.util.Arrays;
@@ -18,11 +19,12 @@ public class InputView {
         return Money.of(amount);
     }
 
-    public static List<Integer> inputWinningNumbers() {
+    public static Lotto inputWinningNumbers() {
         final String input = readLine();
         final List<String> chunks = Arrays.stream(input.split("")).collect(Collectors.toList());
         InputValidator.validateWinningNumbers(chunks);
-        return chunks.stream().map(Integer::parseInt).collect(Collectors.toList());
+        List<Integer> winningNums = chunks.stream().map(Integer::parseInt).collect(Collectors.toList());
+        return new Lotto(winningNums);
     }
 
     public static int inputBonusNumber() {
