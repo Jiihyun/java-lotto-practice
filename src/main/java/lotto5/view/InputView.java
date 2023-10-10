@@ -20,14 +20,16 @@ public class InputView {
     }
 
     public static Lotto inputWinningNumbers() {
+        OutputView.inputWinningNumberMsg();
         final String input = readLine();
-        final List<String> chunks = Arrays.stream(input.split("")).collect(Collectors.toList());
+        final List<String> chunks = Arrays.stream(input.split(",")).collect(Collectors.toList());
         InputValidator.validateWinningNumbers(chunks);
         List<Integer> winningNums = chunks.stream().map(Integer::parseInt).collect(Collectors.toList());
         return new Lotto(winningNums);
     }
 
     public static int inputBonusNumber() {
+        OutputView.inputBonusNumberMsg();
         final String input = readLine();
         InputValidator.validateBonusNumberInput(input);
 

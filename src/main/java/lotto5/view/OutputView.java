@@ -20,10 +20,18 @@ public class OutputView {
     }
 
     public static void printDrawingResult(DrawingResults result) {
-
+        System.out.println(result);
     }
 
     public static void inputMoneyMsg() {
         System.out.println("구입금액을 입력해 주세요.");
+    }
+
+    public static void inputWinningNumberMsg() {
+        System.out.println("당첨 번호를 입력해 주세요.");
+    }
+
+    public static void inputBonusNumberMsg() {
+        System.out.println("보너스 번호를 입력해 주세요.");
     }
 }
