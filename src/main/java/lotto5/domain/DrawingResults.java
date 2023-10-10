@@ -1,22 +1,24 @@
 package lotto5.domain;
 
+import lotto4.domain.Lotto;
+import lotto4.domain.LottoDrawingResult;
+import lotto4.domain.LottoDrawingResults;
+import lotto4.domain.LottoTickets;
+
+import java.util.ArrayList;
 import java.util.LinkedHashMap;
+import java.util.List;
 import java.util.Map;
 
 public class
 DrawingResults {
-    private Map<DrawingResult, Integer> resultCountMap;
+    private final List<DrawingResult> drawingResults;
 
-    public DrawingResults() {
-        this.resultCountMap = new LinkedHashMap<>();
-        resultCountMap.put(DrawingResult.FIFTH, 0);
-        resultCountMap.put(DrawingResult.FOURTH, 0);
-        resultCountMap.put(DrawingResult.THIRD, 0);
-        resultCountMap.put(DrawingResult.SECOND, 0);
-        resultCountMap.put(DrawingResult.FIRST, 0);
+    private DrawingResults(final List<DrawingResult> drawingResults) {
+        this.drawingResults = drawingResults;
     }
 
-    public Map<DrawingResult, Integer> getResultCountMap() {
-        return resultCountMap;
+    public static DrawingResults of(final List<DrawingResult> drawingResults) {
+        return new DrawingResults(drawingResults);
     }
 }
