@@ -1,5 +1,7 @@
 package lotto5.domain;
 
+import lotto5.view.InputView;
+
 import java.util.List;
 
 import static lotto4.util.MessageConst.*;
@@ -21,6 +23,24 @@ DrawingResults {
         return drawingResults.stream().filter(r -> r.equals(result)).count();
     }
 
+    private double rateOfReturn() {
+        //총 당첨 금액 / 투입한 금액 * 100
+        double totalAmount = getTotalAmount();
+        return totalAmount / getSpentMoney() * 100;
+    }
+
+    private int getSpentMoney() {
+        return drawingResults.size()*1000;
+    }
+
+    private double getTotalAmount() {
+        double sum = 0;
+        for (DrawingResult drawingResult : drawingResults) {
+            sum += drawingResult.getPrize();
+        }
+        return sum;
+    }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -29,7 +49,8 @@ DrawingResults {
         sb.append(FIVE_MATCHES).append(getCount(DrawingResult.THIRD)).append(UNIT_OF_NUM).append("\n");
         sb.append(FIVE_MATCHES_WITH_BONUS).append(getCount(DrawingResult.SECOND)).append(UNIT_OF_NUM).append("\n");
         sb.append(SIX_MATCHES).append(getCount(DrawingResult.FIRST)).append(UNIT_OF_NUM).append("\n");
-//        sb.append(String.format("총 수익률은 %.1f%%입니다.\n", rateOfReturn()));
+        sb.append(String.format("총 수익률은 %.1f%%입니다.\n", rateOfReturn()));
         return sb.toString();
     }
+
 }

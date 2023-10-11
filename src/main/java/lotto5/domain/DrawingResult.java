@@ -57,4 +57,8 @@ public enum DrawingResult {
         }
         return NONE;
     }
+
+    public int getPrize() {
+        return prize;
+    }
 }

@@ -2,6 +2,7 @@ package lotto5.view;
 
 import lotto5.domain.DrawingResults;
 import lotto5.domain.Lotto;
+import lotto5.domain.Money;
 
 import java.util.List;
 
@@ -34,4 +35,5 @@ public class OutputView {
     public static void inputBonusNumberMsg() {
         System.out.println("보너스 번호를 입력해 주세요.");
     }
+
 }
