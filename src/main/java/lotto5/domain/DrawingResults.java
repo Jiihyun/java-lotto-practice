@@ -44,6 +44,7 @@ DrawingResults {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
+        sb.append("\n");
         sb.append(THREE_MATCHES).append(getCount(DrawingResult.FIFTH)).append(UNIT_OF_NUM).append("\n");
         sb.append(FOUR_MATCHES).append(getCount(DrawingResult.FOURTH)).append(UNIT_OF_NUM).append("\n");
         sb.append(FIVE_MATCHES).append(getCount(DrawingResult.THIRD)).append(UNIT_OF_NUM).append("\n");

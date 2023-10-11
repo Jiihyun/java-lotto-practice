@@ -29,10 +29,12 @@ public class OutputView {
     }
 
     public static void inputWinningNumberMsg() {
+        System.out.println();
         System.out.println("당첨 번호를 입력해 주세요.");
     }
 
     public static void inputBonusNumberMsg() {
+        System.out.println();
         System.out.println("보너스 번호를 입력해 주세요.");
     }
 
