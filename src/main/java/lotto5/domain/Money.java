@@ -32,7 +32,7 @@ public class Money {
 
     private void validateAmount(int amount) {
         if (amount < 0) {
-            throw new IllegalArgumentException("금액은 음수가 될 수 없습니다.");
+            throw new IllegalArgumentException("[ERROR]금액은 음수가 될 수 없습니다.");
         }
     }
 

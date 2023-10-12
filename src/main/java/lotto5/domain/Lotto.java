@@ -24,14 +24,14 @@ public class Lotto {
     private static void validateLottoNumber(List<Integer> numbers) {
         for (Integer number : numbers) {
             if (number < 1 || number > 45) {
-                throw new IllegalArgumentException("로또 번호는 1 - 45 사이여야 합니다.");
+                throw new IllegalArgumentException("[ERROR]로또 번호는 1 - 45 사이여야 합니다.");
             }
         }
     }
 
     private static void validateDuplicateNumber(List<Integer> numbers) {
         if (numbers.stream().distinct().count() != 6) {
-            throw new IllegalArgumentException("중복된 로또 번호 입니다.");
+            throw new IllegalArgumentException("[ERROR]중복된 로또 번호 입니다.");
         }
     }
 
