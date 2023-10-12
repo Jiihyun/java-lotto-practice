@@ -26,11 +26,14 @@ DrawingResults {
     private double rateOfReturn() {
         //총 당첨 금액 / 투입한 금액 * 100
         double totalAmount = getTotalAmount();
-        return totalAmount / getSpentMoney() * 100;
+        double rateOfReturn = totalAmount / getSpentMoney() * 100.0;
+
+        return Math.round(rateOfReturn * 10.0) / 10.0; // 소수점 첫째자리에서 반올림
+
     }
 
     private int getSpentMoney() {
-        return drawingResults.size()*1000;
+        return drawingResults.size() * 1000;
     }
 
     private double getTotalAmount() {
