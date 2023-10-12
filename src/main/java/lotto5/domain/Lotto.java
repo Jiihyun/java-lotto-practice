@@ -2,6 +2,7 @@ package lotto5.domain;
 
 import java.util.Comparator;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Lotto {
     private final List<Integer> numbers;
@@ -10,8 +11,8 @@ public class Lotto {
         validate(numbers);
         validateLottoNumber(numbers);
         validateDuplicateNumber(numbers);
-        numbers.sort(Comparator.naturalOrder());
-        this.numbers = numbers;
+        List<Integer> sortedList = numbers.stream().sorted().collect(Collectors.toList());
+        this.numbers = sortedList;
     }
 
     private void validate(List<Integer> numbers) {
