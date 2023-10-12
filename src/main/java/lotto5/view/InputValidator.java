@@ -9,7 +9,7 @@ public class InputValidator {
         try {
             Integer.parseInt(input);
         } catch (Exception e) {
-            throw new IllegalArgumentException("금액은 숫자로 입력해 주세요.");
+            throw new IllegalArgumentException("[ERROR]금액은 숫자로 입력해 주세요.");
         }
     }
 
@@ -17,7 +17,7 @@ public class InputValidator {
         try {
             int num = Integer.parseInt(input);
             if (num < 1 || num > 45) {
-                throw new IllegalArgumentException("로또 번호는 1 - 45 사이여야 합니다.");
+                throw new IllegalArgumentException("[ERROR]로또 번호는 1 - 45 사이여야 합니다.");
             }
         } catch (NumberFormatException e) {
             throw new BonusNumberInputException();
@@ -26,14 +26,14 @@ public class InputValidator {
 
     public static void validateWinningNumbers(List<String> chunks) {
         if (chunks.size() != 6) {
-            throw new IllegalArgumentException("당첨 번호는 6개여야 합니다.");
+            throw new IllegalArgumentException("[ERROR]당첨 번호는 6개여야 합니다.");
         }
         try {
             for (String chunk : chunks) {
                 Integer.parseInt(chunk);
             }
         } catch (Exception e) {
-            throw new IllegalArgumentException("금액은 숫자로 입력해 주세요.");
+            throw new IllegalArgumentException("[ERROR]금액은 숫자로 입력해 주세요.");
         }
     }
 }
