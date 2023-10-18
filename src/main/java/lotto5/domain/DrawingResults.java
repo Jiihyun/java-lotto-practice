@@ -23,12 +23,12 @@ DrawingResults {
         return drawingResults.stream().filter(r -> r.equals(result)).count();
     }
 
-    private double rateOfReturn() {
+    public double rateOfReturn() {
         //총 당첨 금액 / 투입한 금액 * 100
         double totalAmount = getTotalAmount();
         double rateOfReturn = totalAmount / getSpentMoney() * 100.0;
 
-        return Math.round(rateOfReturn * 10.0) / 10.0; // 소수점 첫째자리에서 반올림
+        return Math.round(rateOfReturn * 10.0) / 10.0; // 소수점 둘째자리에서 반올림
 
     }
 
