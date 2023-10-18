@@ -30,7 +30,7 @@ public class InputValidator {
         }
         try {
             for (String chunk : chunks) {
-                Integer.parseInt(chunk);
+                Integer.parseInt(chunk.trim()); //imp - trim()은 양 옆의 공백 제거해줌
             }
         } catch (Exception e) {
             throw new IllegalArgumentException("[ERROR]금액은 숫자로 입력해 주세요.");
